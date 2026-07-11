@@ -14,8 +14,8 @@ export const AuthLayout = (props) => {
                 </div>
             </div>
 
-            <div className='flex flex-col w-1/2 justify-center items-center'>
-                <div className='flex flex-col gap-10'>
+            <div className='flex w-1/2 justify-center items-center'>
+                <div className='flex flex-col gap-4'>
                     <div className='flex flex-col justify-center items-start'>
                         <h1 className='font-bold text-4xl'>{title}</h1>
                         <p className='text-gray-400'>{desc}</p>
@@ -24,8 +24,6 @@ export const AuthLayout = (props) => {
                     <div className='flex flex-col w-100 gap-4'>
                         {children}
                     </div>
-
-                    <button className='bg-blue-900 text-white h-10 rounded-lg'>Login</button>
                 </div>
             </div>
         </div>
