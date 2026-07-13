@@ -20,7 +20,7 @@ export const Order = () => {
                 title = "Order" subtitle={`${filterCardOrder.length} order ditemukan`} 
 
                 left =<Clock/>
-                classNameLeft = "flex justify-between pr-6"
+                classNameLeft = "flex justify-between"
 
                 right={
                     <div className="flex  justify-between items-center w-full">
@@ -42,7 +42,7 @@ export const Order = () => {
                             </button>
                         </div>
                     </div>}
-                classNameRight = "flex justify-between pr-6"
+                classNameRight = "flex justify-between"
             />
             {openInputOrder && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
@@ -53,7 +53,7 @@ export const Order = () => {
 
             {/* Main */}
             <div className="flex-1 overflow-y-auto scrollbar-thin">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 items-center p-4 justify-center ">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 items-center justify-center ">
                     {filterCardOrder.map((data) => (
                         <div key={data.index} className="border gap-2 flex flex-col justify-between bg-white h-fit rounded-lg border-gray-300 p-4 w-full max-w-100">
                             <div>

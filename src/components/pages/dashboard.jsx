@@ -9,7 +9,7 @@ export const Dashboard = () => {
     const [openDetailFaktur, setOpenDetailFaktur] = useState(false)
 
     return(
-        <div className=" flex flex-col gap-4 pr-6">
+        <div className=" flex flex-col gap-4">
             <Header
                 title = "Dahsboard"
                 left = <Clock/>
