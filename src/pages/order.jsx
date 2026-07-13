@@ -1,10 +1,10 @@
 import { dataOrder } from "../data/data";
 import { useState } from "react";
-import { InputOrder } from "./inputOrder";
+import { InputOrder } from "../components/inputOrder";
 import { Header } from "../layout/headerLayout";
-import { Clock } from "../pages/clock";
+import { Clock } from "../components/clock";
 import {Plus, Search} from 'lucide-react'
-import { DetailOrder } from "./detailOrder";
+import { DetailOrder } from "../components/detailOrder";
 
 export const Order = () => {
 

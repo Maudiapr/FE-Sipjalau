@@ -1,8 +1,8 @@
 import { Header } from "../layout/headerLayout"
-import { Clock } from "../pages/clock"
+import { Clock } from "../components/clock"
 import { dataFaktur } from "../data/data"
 import { useState } from "react"
-import { DetailFaktur } from "./detailFaktur"
+import { DetailFaktur } from "../components/detailFaktur"
 
 export const Dashboard = () => {
 

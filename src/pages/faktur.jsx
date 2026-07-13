@@ -1,9 +1,9 @@
-import {Clock} from '../pages/clock'
+import {Clock} from '../components/clock'
 import { Header } from '../layout/headerLayout'
 import { months } from '../data/data'
 import { dataFaktur } from '../data/data'
 import { useState } from 'react'
-import { DetailFaktur } from './detailFaktur'
+import { DetailFaktur } from '../components/detailFaktur'
 import { Search } from 'lucide-react'
 
 export const Faktur = () => {

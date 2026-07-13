@@ -7,12 +7,12 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import './index.css'
 
-import { Login } from './components/pages/login'
+import { Login } from './pages/login'
 import {Route, Routes, BrowserRouter} from "react-router-dom"
-import { MainLayout } from './components/layout/mainLayout'
-import { Dashboard } from './components/pages/dashboard'
-import { Order } from './components/pages/order'
-import { Faktur } from './components/pages/faktur';
+import { MainLayout } from './layout/mainLayout'
+import { Dashboard } from './pages/dashboard'
+import { Order } from './pages/order'
+import { Faktur } from './pages/faktur';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
