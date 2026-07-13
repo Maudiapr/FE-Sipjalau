@@ -54,28 +54,28 @@ export const InputOrder = ({onClose}) => {
     }]
     const [statusPayment, setStatusPayment] = useState("")
     return(
-            <div className='w-140 border bg-white max-h-[90vh] border-gray-300 flex flex-col gap-4 overflow-auto scrollbar-none scroll-smooth rounded-xl'>
+            <div className='font-inter text-sm w-140 border bg-white max-h-[90vh] border-gray-300 flex flex-col gap-4 overflow-y-auto scrollbar-thin scroll-smooth rounded-xl'>
                 <div className='flex justify-between items-center p-2.5'>
                     <div>
                         <h1>Order Baru</h1>
-                        <p className='text-sm text-gray-400'>INV akan dibuat otomatis</p>
+                        <p className='text-gray-400'>INV akan dibuat otomatis</p>
                     </div>
                     <button onClick={onClose}><X className='text-gray-400'/></button>
                 </div>
 
                 <div className='border border-gray-200'/>
 
-                <div className='text-sm flex flex-col gap-2.5 px-2.5'>
-                    <h1 className='text-gray-400 text-sm'>DATA PELANGGAN</h1>
+                <div className='flex flex-col gap-2.5 px-2.5'>
+                    <h1 className='text-gray-400'>DATA PELANGGAN</h1>
 
                     <div className='flex justify-between text-gray-600 gap-2.5'>
                         <label htmlFor="custname" className='w-1/2'>
-                            <p>Nama Pelanggan</p>
+                            <p>Nama Pelanggan<span className="text-red-500">*</span></p>
                             <input type="text" name="custName" id="custname" placeholder='Nama Lengkap' className='w-full border border-gray-300 h-10 p-1 rounded-sm mt-1.5'/>
                         </label>
                         
                         <label htmlFor="custno" className='w-1/2'>
-                            <p>No. HP</p>
+                            <p>No. HP<span className="text-red-500">*</span></p>
                             <input type="text" name="custNo" id="custno" placeholder='08xx-xxxx-xxxx' className='w-full border border-gray-300 h-10 p-1 rounded-sm mt-1.5'/>
                         </label>
                     </div>
@@ -103,10 +103,10 @@ export const InputOrder = ({onClose}) => {
 
                     <div className='flex flex-col gap-2.5'>
                         {items.map((item) => (
-                            <div key={item.id} className='flex items-end gap-2.5 p-1'>
+                            <div key={item.id} className='flex items-end gap-2.5 p-1 '>
                                 <label htmlFor="layanan">
-                                    <p className='text-xs text-gray-600'>Layanan</p>
-                                    <select name="layanan" className='border border-gray-300 h-9 p-1.5 w-70 text-gray-600 text-sm'>
+                                    <p className=' text-gray-400'>Layanan</p>
+                                    <select name="layanan" className='border border-gray-300 h-9 rounded-xs p-1.5 w-70 text-gray-600 text-sm'>
                                         <option value="">Pilih Layanan...</option>
                                         {DataLayanan.map((data) => (
                                             <option key={data.id}>{data.nama}</option>
@@ -115,13 +115,13 @@ export const InputOrder = ({onClose}) => {
                                 </label>
 
                                     <label htmlFor="weightlaun">
-                                        <p className='text-xs text-gray-400'>Qty/Kg</p>
+                                        <p className=' text-gray-400'>Qty/Kg</p>
                                         <input type="text" name="weightLaundry" id="weightlaun" placeholder='0' className=' rounded-xs w-25 p-1.5 border border-gray-300'/>
                                     </label>
                                     
                                     <label htmlFor="satuan">
-                                        <p className='text-xs text-gray-400'>Satuan</p>
-                                        <input type="text" name="weightLaundry" id="weightlaun" placeholder='kg' readOnly className='rounded-xs w-15 p-1.5 border border-gray-400'/>
+                                        <p className=' text-gray-400'>Satuan</p>
+                                        <input type="text" name="weightLaundry" id="weightlaun" placeholder='kg' readOnly className='rounded-xs w-15 p-1.5 border border-gray-300'/>
                                     </label>
         
                                     <button onClick={() => DeleteItem(item.id)} className="bg-white border border-gray-300 text-gray-400 font-light h-fit flex w-fit p-1.5 mb-1 rounded-sm justify-center items-center"><X size={15}/></button>
@@ -144,7 +144,7 @@ export const InputOrder = ({onClose}) => {
                     <div className='flex flex-col gap-4'>
                         <div className='flex justify-start gap-4'>
                             <label htmlFor="payment">
-                                <p className='text-sm text-gray-600'>Metode Pembayaran</p>
+                                <p className=' text-gray-600'>Metode Pembayaran</p>
                                 <select name="paymentMethode" id="payment" className='border rounded-lg border-gray-300 px-2.5 h-10 w-55 text-gray-600 text-sm'>
                                     {Payment.map((metode) => (
                                         <option>{metode.metode}</option>
@@ -153,21 +153,21 @@ export const InputOrder = ({onClose}) => {
                             </label>
 
                             <div className='flex gap-1.5 flex-col'>
-                                <p className='text-sm text-gray-600'>Estimasi</p>
-                                <div className="grid w-25 h-9 grid-cols-2 rounded-2xl border border-gray-300">
+                                <p className='text-gray-600'>Estimasi</p>
+                                <div className="grid w-25 h-9 grid-cols-2 rounded-2xl border justify-center border-gray-300">
                                     <div className="flex items-center justify-center">
-                                        <p className="text-xs font-semibold text-gray-600">{estimasi}</p>
+                                        <p className=" font-semibold text-gray-600">{estimasi}</p>
                                     </div>
 
                                     <div className="flex items-center rounded-r-2xl justify-center border-l border-gray-300 bg-gray-50">
-                                        <p className="text-xs font-medium text-gray-400">Hari</p>
+                                        <p className="font-medium text-gray-400">Hari</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className='flex flex-col gap-2.5'>
-                            <p className='text-sm text-gray-600'>Status Pembayaran</p>
+                            <p className='text-sm text-gray-600'>Status Pembayaran<span className="text-red-500">*</span></p>
                             <div className=' flex gap-2.5 text-sm'>
                                 {paymentStatus.map((status) => (
                                     <button key={status.id} type="button" onClick={() => setStatusPayment(status.status)} className={`p-2.5 w-1/2 rounded-lg ${statusPayment === status.status ? "bg-green-200 border border-green-600 text-green-700" : "bg-none border border-gray-00 text-gray-400"}`}>

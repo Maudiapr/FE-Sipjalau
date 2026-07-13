@@ -36,7 +36,7 @@ export const DetailOrder = ({onClose}) => {
 
     }
     return(
-        <div className='flex flex-col w-140 mx-2 bg-white overflow-y-auto max-h-[90vh] scrollbar-thin rounded-xl'>
+        <div className='font-inter flex flex-col w-140 mx-2 bg-white overflow-y-auto max-h-[90vh] scrollbar-thin rounded-xl'>
              {/* Header */}
             <div className='flex justify-between p-2.5 sticky top-0 bg-white border-b-2 border-gray-200'>
                 <div className='flex flex-col'>
@@ -47,10 +47,10 @@ export const DetailOrder = ({onClose}) => {
                 <button onClick={onClose}><X/></button>
             </div>
 
-            <div className="border border-gray-100 w-full"/> 
+            <hr className="border border-gray-100"/> 
 
             <div className='p-2.5'>
-                <h1 className='text-gray-400 text-sm'>Status Pesanan</h1>
+                <h1 className='text-gray-400 text-sm'>STATUS PESANAN</h1>
             </div>
 
             <div className='bg-orange-100 text-orange-900 w-full p-2.5 border-t border-b border-gray-300'>
@@ -64,10 +64,10 @@ export const DetailOrder = ({onClose}) => {
                 </div>
             </div>
 
-            <div className="border border-gray-100 w-full"/> 
+            <hr className="border border-gray-100"/>
 
             <div className='flex flex-col p-2.5 gap-1'>
-                <h1 className='text-gray-400 text-sm'>Pelanggan</h1>
+                <h1 className='text-gray-400 text-sm'>PELANGGAN</h1>
 
                 <div className='flex flex-col gap-1'>
                     <h2 className='text-sm font-semibold'>Rina Wulandari</h2>
@@ -81,37 +81,39 @@ export const DetailOrder = ({onClose}) => {
                 </div>
             </div>
 
-            <div className="border border-gray-100 w-full"/> 
+            <hr className="border border-gray-100"/> 
 
-            <div className='p-2.5'>
-                <h1 className='text-gray-400 text-sm'>Item Pesanan</h1>
+            <div className='p-2.5 flex flex-col gap-5'>
+                <h1 className='text-gray-400 text-sm'>ITEM PESANAN</h1>
 
-                <div className="grid grid-cols-12 gap-4 pb-3 border-b border-gray-100 text-sm font-medium text-gray-400">
-                    <div className='col-span-7'>Layanan</div>
-                    <div className='col-span-2'>Qty/Kg</div>
-                    <div className='col-span-3 text-center'>Harga</div>
-                </div>
-
-                {orderItems.map((data) => (
-                    <div key={data.id} className="grid grid-cols-12 text-sm gap-4 py-4 border-b border-gray-200">
-                        <div className="col-span-7">
-                            <div className='flex gap-0.5 flex-col'>
-                                <p className="font-semibold text-md">{data.layanan}</p>
-                                <p className="text-gray-400 text-sm mt-1">{data.kategori} • {data.satuan} • {data.estimasi}</p>
-                                <p className='bg-gray-200 text-gray-400 w-fit p-1.5 rounded-md border text-xs border-gray-400'>{data.label}</p>
-                            </div>
-                        </div>
-
-                        <div className="col-span-2 text-gray-400"><p>{data.qty}</p></div>
-
-                        <div className="col-span-3 flex justify-end text-gray-600"><p>{data.harga}</p></div>
+                <div className='flex flex-col text-sm'>
+                    <div className="grid grid-cols-12 pb-3 border-b border-gray-100 text-gray-400">
+                        <div className='col-span-7'>Layanan</div>
+                        <div className='col-span-2'>Qty/Kg</div>
+                        <div className='col-span-3 text-center'>Harga</div>
                     </div>
-                ))}
+
+                    {orderItems.map((data) => (
+                        <div key={data.id} className="grid grid-cols-12 gap-4 py-4 border-b border-gray-200">
+                            <div className="col-span-7">
+                                <div className='flex gap-0.5 flex-col'>
+                                    <p className="font-semibold text-md">{data.layanan}</p>
+                                    <p className="text-gray-400 text-sm mt-1">{data.kategori} • {data.satuan} • {data.estimasi}</p>
+                                    <p className='bg-gray-200 text-gray-400 w-fit p-1.5 rounded-md border text-xs border-gray-400'>{data.label}</p>
+                                </div>
+                            </div>
+
+                            <div className="col-span-2 text-gray-400"><p>{data.qty}</p></div>
+
+                            <div className="col-span-3 flex justify-end text-gray-600"><p>{data.harga}</p></div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
 
             <div className='p-2.5 flex flex-col gap-1.5'>
-                <h1 className='text-gray-400 text-sm'>Timeline</h1>
+                <h1 className='text-gray-400 text-sm'>TIMELINE</h1>
 
                 <div className="flex text-xs gap-1 justify-center items-center">
                     {timelineOrder.map((data) => (
@@ -134,12 +136,13 @@ export const DetailOrder = ({onClose}) => {
                 </div>
             </div>
 
+            <hr className="border border-gray-100"/>
             
-            <div className='p-2.5 flex flex-col gap-2'>
-                <h1 className='text-gray-400 text-sm'>Catatan Order</h1>
+            <div className='p-2.5 flex flex-col gap-2.5'>
+                <h1 className='text-gray-400 text-sm'>CATATAN ORDER</h1>
 
                 <div className='p-2 border border-gray-300 rounded-lg bg-gray-100 h-fit'>
-                    <p className='text-sm text-gray-600'>Keterangan</p>
+                    <p className='text-sm text-gray-500'>Keterangan</p>
                 </div>
             </div>
 
