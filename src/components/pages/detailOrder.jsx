@@ -38,7 +38,7 @@ export const DetailOrder = ({onClose}) => {
     return(
         <div className='flex flex-col w-140 mx-2 bg-white overflow-y-auto max-h-[90vh] scrollbar-thin rounded-xl'>
              {/* Header */}
-            <div className='flex justify-between p-2.5'>
+            <div className='flex justify-between p-2.5 sticky top-0 bg-white border-b-2 border-gray-200'>
                 <div className='flex flex-col'>
                     <h2 className='text-lg'>INV-2025-039</h2>
                     <p className='text-sm text-gray-400'>Diterima: Rab, 3 Jul 2026 · 09:15</p>
