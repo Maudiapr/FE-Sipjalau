@@ -1,4 +1,4 @@
-import laundry from '../../assets/laundry.jpg'
+import laundry from '../assets/laundry.jpg'
 
 export const AuthLayout = (props) => {
     const {title, desc, children} = props

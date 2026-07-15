@@ -13,19 +13,26 @@ import { MainLayout } from './layout/mainLayout'
 import { Dashboard } from './pages/dashboard'
 import { Order } from './pages/order'
 import { Faktur } from './pages/faktur';
+import { AuthProvider } from './context/authContext.jsx'
+import ProtectedRoute from './routes/protectedRoutes.jsx'
+import { Toaster } from 'sonner';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login/>}/>
+      <AuthProvider>
+        <Routes>
+          <Route path='/login' element={<Login/>}/>
 
-        <Route path='/' element={<MainLayout/>}>
-          <Route index element={<Dashboard/>}/>
-          <Route path='order' element={<Order/>}/>
-          <Route path='faktur' element={<Faktur/>}/>
-        </Route>
-      </Routes>
+          <Route path='/' element={<ProtectedRoute><MainLayout/></ProtectedRoute>}>
+            <Route index element={<Dashboard/>}/>
+            <Route path='order' element={<Order/>}/>
+            <Route path='faktur' element={<Faktur/>}/>
+          </Route>
+        </Routes>
+        <Toaster richColors position="top-center" duration={3000} />
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 )

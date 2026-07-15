@@ -5,18 +5,21 @@
             index : 1, 
             Icon : LayoutGrid,
             title : "Dashboard",
-            path : "/"
+            path : "/",
+            role : ["cashier", "manager"]
         },
         {
             index : 2, 
             Icon : ShoppingCart,
             title : "Order",
-            path : "/order"
+            path : "/order",
+            role : ["cashier", "manager"]
         },
         {
             index : 3, 
             Icon : File,
             title : "Faktur",
-            path : "/faktur"
+            path : "/faktur",
+            role : ["manager"]
         }
     ]

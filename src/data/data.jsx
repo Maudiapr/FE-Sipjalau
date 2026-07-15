@@ -2,15 +2,18 @@
 export const Payment = [
     {
         id : 1,
-        metode : "Cash"
+        label : "Cash",
+        value : "tunai"
     },
     {
         id : 2,
-        metode : "Qris"
+        label : "Qris",
+        value : "qris"
     },
     {
         id : 3,
-        metode : "Transfer"
+        label : "Transfer Bank",
+        value : "transfer_bank"
     }
 ]
 
