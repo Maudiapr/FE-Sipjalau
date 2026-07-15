@@ -121,9 +121,9 @@ export const InputOrder = ({onClose, onSuccess}) => {
         setOrderType(type)
 
         if(type === "Regular"){
-            setEstimasi(3)
-        } else {
             setEstimasi(2)
+        } else {
+            setEstimasi(1)
         }
 
         setItems((prev) => prev.map((item) => ({
